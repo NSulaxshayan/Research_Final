@@ -1,0 +1,28 @@
+{% extends "layouts/base1.html" %}
+
+{% block content %}
+  <h2>Pulse View</h2>
+  <canvas id="pulseChart" width="400" height="200"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var ctx = document.getElementById('pulseChart').getContext('2d');
+        var captures = JSON.parse('{{ captures|escapejs }}');
+        var labels = captures.map(c => c.timestamp);
+        var data = {
+            labels: labels,
+            datasets: [{
+                label: 'Network Traffic',
+                data: captures.map(c => c.length),
+                backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        };
+        var pulseChart = new Chart(ctx, {
+            type: 'line',
+            data: data,
+        });
+    });
+  </script>
+{% endblock %}

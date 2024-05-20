@@ -1,0 +1,67 @@
+<!-- {% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+    <!-- [ Main Content ] start -->
+    <div class="pc-container">
+        <div class="pcoded-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-6">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Dashboard</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                                <li class="breadcrumb-item">Dashboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+                     
+            <!-- [ Main Content ] end -->
+            
+        </div>
+        <div>
+    </div>
+    <!-- [ Main Content ] end -->
+    <!-- Place the button here -->
+    <div class="pc-container">
+        <div>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary btn-sm text-white m-0" action="{% url 'scan_network' %}">Start Scan</button>
+            </form>
+        </div>
+        <div>
+            <form method="post" action="">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary btn-sm text-white m-0" action="{% url 'pulse_view' %}">View Statistics</button>
+            </form>
+        </div>
+    </div>
+    
+
+   
+    
+    
+	
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+    <script src="/static/js/plugins/apexcharts.min.js"></script>
+    <script src="/static/js/dashboard-sale.js"></script>
+
+{% endblock javascripts %} -->
